@@ -1,0 +1,33 @@
+{
+    "name": "droid/droid-os",
+    "description": "Droid plugin droid-os",
+    "homepage": "http://www.github.com/droid-php/droid-os",
+    "keywords": ["php", "droid", "os"],
+    "type": "library",
+    "authors": [
+        {
+            "name": "LinkORB Engineering",
+            "email": "engineering@linkorb.com",
+            "role": "Development"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "droid/libcommand": "~1.0",
+        "symfony/process": "~2.7 || ^3.1",
+        "symfony/console": "~2.7 || ^3.1"
+    },
+    "require-dev": {
+        "mikey179/vfsStream": "^1.6",
+        "phpunit/phpunit": "^4.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Droid\\Plugin\\Os\\": "src/"
+        }
+    },
+    "bin": [
+        "bin/droid-os"
+    ],
+    "license": "MIT"
+}
