@@ -21,7 +21,7 @@ if (!file_exists($loader)) {
 
 require $loader;
 
-$application = new Application('Droid Os', '1.0.0');
+$application = new Application('Droid OS', '1.0.0');
 $application->setCatchExceptions(true);
 $registry = new DroidPlugin($application);
 foreach ($registry->getCommands() as $command) {
