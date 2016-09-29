@@ -26,7 +26,7 @@ class OsRebootCommandTest extends PHPUnit_Framework_TestCase
         ;
         $this->processBuilder = $this
             ->getMockBuilder(ProcessBuilder::class)
-            ->setMethods(array('setArguments', 'getProcess'))
+            ->setMethods(array('setArguments', 'setTimeout', 'getProcess'))
             ->getMock()
         ;
 
@@ -45,6 +45,13 @@ class OsRebootCommandTest extends PHPUnit_Framework_TestCase
             ->expects($this->once())
             ->method('setArguments')
             ->with(array('shutdown', '-r', 'now', '&&', 'logout'))
+            ->willReturnSelf()
+        ;
+        $this
+            ->processBuilder
+            ->expects($this->once())
+            ->method('setTimeout')
+            ->with($this->equalTo(0.0))
             ->willReturnSelf()
         ;
         $this
@@ -89,6 +96,13 @@ class OsRebootCommandTest extends PHPUnit_Framework_TestCase
             ->expects($this->once())
             ->method('setArguments')
             ->with(array('shutdown', '-r', 'now', '&&', 'logout'))
+            ->willReturnSelf()
+        ;
+        $this
+            ->processBuilder
+            ->expects($this->once())
+            ->method('setTimeout')
+            ->with($this->equalTo(0.0))
             ->willReturnSelf()
         ;
         $this
